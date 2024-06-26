@@ -14,7 +14,7 @@ function App(): JSX.Element {
 
   return (
     <div>
-      <div>
+      <div className="bg-amber-300">
         <form onSubmit={async e => {
           e.preventDefault()
 
@@ -32,12 +32,12 @@ function App(): JSX.Element {
           }
         }}>
           <input name="title" type="text" placeholder="title" />
-          <button>add</button>
+          <button className="bg-red-500">add</button>
         </form>
       </div>
       {postList.map(post => {
         return (
-          <div key={post.id}>
+          <div key={post.id} className="bg-amber-200">
             {post.title}
           </div>
         )
