@@ -4,9 +4,11 @@
     "paths": {
       "@/*": ["src/renderer/src/*"],
       "@renderer/*": ["src/renderer/src/*"],
-      "@base/*":["src/*"]
+      "@base/*": ["src/*"]
     },
-
+    "jsx": "react-jsx",
+    // 添加这一行
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src"]
 }

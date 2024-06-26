@@ -24,7 +24,14 @@
     "@electron-toolkit/preload": "^3.0.0",
     "@electron-toolkit/utils": "^3.0.0",
     "better-sqlite3": "^9.5.0",
-    "drizzle-orm": "^0.30.9"
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "drizzle-orm": "^0.30.9",
+    "framer-motion": "^11.2.12",
+    "react-router-dom": "^6.24.0",
+    "svelte-inview": "^4.0.2",
+    "tailwind-merge": "^2.3.0",
+    "tailwind-variants": "^0.2.1"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config-prettier": "^2.0.0",

@@ -1,49 +1,29 @@
-import { useEffect, useState } from "react"
-import { database } from "./db"
-import { posts } from "../../db/schema"
+// src/App.tsx
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import HomeView from '@/view/HomeView';
+import SetView from '@/view/SetView';
+import StudyView from '@/view/StudyView';
+import { DockDemo } from "@/components/DockDemo";
 
-function App(): JSX.Element {
-
-  const [postList, setPosts] = useState([] as any[])
-
-  useEffect(() => {
-    database.query.posts.findMany().then(result => {
-      setPosts(result)
-    })
-  }, [])
-
+const App = (): React.ReactElement => {
   return (
-    <div>
-      <div className="bg-amber-300">
-        <form onSubmit={async e => {
-          e.preventDefault()
-
-          const formData = new FormData(e.target as HTMLFormElement)
-          const title = formData.get('title') as string
-          if (title) {
-            await database.insert(posts).values({
-              id: Math.floor(Math.random() * 1000),
-              title
-            })
-
-            // refetch
-            const result = await database.query.posts.findMany()
-            setPosts(result)
-          }
-        }}>
-          <input name="title" type="text" placeholder="title" />
-          <button className="bg-red-500">add</button>
-        </form>
+    <Router>
+      <div className="flex flex-col min-h-screen">
+        <header className="bg-blue-600 text-white p-4 text-center">
+          <h1 className="text-2xl">My App</h1>
+        </header>
+        <main className="flex-grow p-4">
+          <Routes>
+            <Route path="/" element={<HomeView />} />
+            <Route path="about" element={<SetView />} />
+            <Route path="contact" element={<StudyView />} />
+          </Routes>
+        </main>
+          <DockDemo />
       </div>
-      {postList.map(post => {
-        return (
-          <div key={post.id} className="bg-amber-200">
-            {post.title}
-          </div>
-        )
-      })}
-    </div>
-  )
-}
+    </Router>
+  );
+};
 
-export default App
+export default App;
