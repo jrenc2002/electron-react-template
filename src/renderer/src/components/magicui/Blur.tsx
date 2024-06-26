@@ -1,4 +1,3 @@
-"use client";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import React, { useState, useEffect, useRef } from "react";
@@ -11,9 +10,10 @@ interface BlurIntProps {
     visible: { filter: string; opacity: number };
   };
   duration?: number;
+  mode?:boolean;
 }
 
-const BlurIn = ({ children, className, variant, duration = 0.5 }: BlurIntProps) => {
+const BlurIn = ({ children, className, variant, duration = 0.5,mode =true }: BlurIntProps) => {
   const [isVisible, setIsVisible] = useState(true);
   const timeoutId = useRef<NodeJS.Timeout | null>(null);
 
@@ -45,19 +45,30 @@ const BlurIn = ({ children, className, variant, duration = 0.5 }: BlurIntProps) 
     };
   }, []);
 
-  return (
+  return  mode===true? (
+      <motion.div
+        initial="hidden"
+        animate={isVisible ? "visible" : "hidden"}
+        transition={{ duration }}
+        variants={combinedVariants}
+        className={cn(className, "")}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {children}
+      </motion.div>
+    ):(
     <motion.div
       initial="hidden"
       animate={isVisible ? "visible" : "hidden"}
       transition={{ duration }}
       variants={combinedVariants}
       className={cn(className, "")}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
     >
       {children}
     </motion.div>
-  );
+  )
+
 };
 
 export default BlurIn;

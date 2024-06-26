@@ -15,7 +15,7 @@ export function DockDemo(): React.ReactElement {
 
   return (
     <div className=" absolute bottom-0 flex w-full flex-col items-center justify-center  rounded-lg bg-background md:shadow-xl">
-      <BlurIn>
+      <BlurIn mode={true}>
         <Dock className="relative bottom-5 bg-[rgb(245,245,245,0.8)] hover:bg-[rgb(245,245,245)]   ">
           <DockIcon
             name="开始"
@@ -51,7 +51,6 @@ export function DockDemo(): React.ReactElement {
             }
           </DockIcon>
         </Dock>
-
       </BlurIn>
         </div>
   );
