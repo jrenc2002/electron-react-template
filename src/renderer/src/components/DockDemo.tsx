@@ -1,13 +1,16 @@
 import { Dock, DockIcon } from "@/components/magicui/Dock";
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-
+import '@/i18n'; // 引入 i18n 配置文件
+import { useTranslation } from 'react-i18next';
 import BlurIn from '@/components/magicui/Blur';
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
 export function DockDemo(): React.ReactElement {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation();
+
 
   const handleNavigation = (path: string) => {
     navigate(path);
@@ -18,8 +21,8 @@ export function DockDemo(): React.ReactElement {
       <BlurIn mode={true}>
         <Dock className="relative bottom-5 bg-[rgb(245,245,245,0.8)] hover:bg-[rgb(245,245,245)]   ">
           <DockIcon
-            name="开始"
-            designation="开始你的学习旅程吧！"
+            name={t('Home')}
+            designation={t('HomeDescription')}
             id={1}
             onClick={() => handleNavigation("/")}
             className={(location.pathname === "/" ? " " : "")+"bg-neutral-400/20"}
@@ -29,8 +32,8 @@ export function DockDemo(): React.ReactElement {
             }
           </DockIcon>
           <DockIcon
-            name="学习"
-            designation="强化训练，认真复习！"
+            name={t('Study')}
+            designation={t('StudyDescription')}
             id={2}
             onClick={() => handleNavigation("/about")}
             className={(location.pathname === "/about" ?"  " : "")+"bg-neutral-400/20"}
@@ -40,8 +43,8 @@ export function DockDemo(): React.ReactElement {
             }
           </DockIcon>
           <DockIcon
-            name="设置"
-            designation="在这设置一些相关属性！"
+            name={t('Set')}
+            designation={t('SetDescription')}
             id={3}
             onClick={() => handleNavigation("/contact")}
             className={(location.pathname === "/contact" ? "  " : "")+"bg-neutral-400/20"}

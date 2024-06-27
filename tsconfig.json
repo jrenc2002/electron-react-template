@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "typeRoots": ["./node_modules/@types", "src/renderer/src"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/renderer/src/*"],
@@ -8,7 +9,9 @@
     },
     "jsx": "react-jsx",
     // 添加这一行
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
   "include": ["src"]
 }
