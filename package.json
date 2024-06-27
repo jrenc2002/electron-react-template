@@ -23,6 +23,7 @@
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.0",
     "@electron-toolkit/utils": "^3.0.0",
+    "@tabler/icons-react": "^3.7.0",
     "better-sqlite3": "^9.5.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",

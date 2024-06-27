@@ -35,22 +35,22 @@ export function DockDemo(): React.ReactElement {
             name={t('Study')}
             designation={t('StudyDescription')}
             id={2}
-            onClick={() => handleNavigation("/about")}
-            className={(location.pathname === "/about" ?"  " : "")+"bg-neutral-400/20"}
+            onClick={() => handleNavigation("/study")}
+            className={(location.pathname === "/study" ?"  " : "")+"bg-neutral-400/20"}
           >
             {
-              (location.pathname !== "/about" ?<Icons.Study className="h-6 w-6" />:<Icons.selectedStudy className="h-6 w-6" />)
+              (location.pathname !== "/study" ?<Icons.Study className="h-6 w-6" />:<Icons.selectedStudy className="h-6 w-6" />)
             }
           </DockIcon>
           <DockIcon
             name={t('Set')}
             designation={t('SetDescription')}
             id={3}
-            onClick={() => handleNavigation("/contact")}
-            className={(location.pathname === "/contact" ? "  " : "")+"bg-neutral-400/20"}
+            onClick={() => handleNavigation("/set")}
+            className={(location.pathname === "/set" ? "  " : "")+"bg-neutral-400/20"}
           >
             {
-              (location.pathname !== "/contact" ?<Icons.Set className="h-6 w-6" />:<Icons.selectedSet className="h-6 w-6" />)
+              (location.pathname !== "/set" ?<Icons.Set className="h-6 w-6" />:<Icons.selectedSet className="h-6 w-6" />)
             }
           </DockIcon>
         </Dock>

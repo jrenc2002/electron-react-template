@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import HomeView from '@/view/HomeView';
-import SetView from '@/view/SetView';
+import {SetView} from '@/view/SetView';
 import StudyView from '@/view/StudyView';
 import { DockDemo } from "@/components/DockDemo";
 import { GridBg } from "@/components/magicui/GirdBg";
@@ -31,8 +31,8 @@ const App = (): React.ReactElement => {
           <GridBg>
             <Routes>
               <Route path="/" element={<HomeView />} />
-              <Route path="about" element={<SetView />} />
-              <Route path="contact" element={<StudyView />} />
+              <Route path="study" element={<StudyView />} />
+              <Route path="set" element={<SetView />} />
             </Routes>
           </GridBg>
         </main>

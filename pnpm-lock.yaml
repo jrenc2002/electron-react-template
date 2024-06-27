@@ -11,6 +11,9 @@ dependencies:
   '@electron-toolkit/utils':
     specifier: ^3.0.0
     version: 3.0.0(electron@28.3.1)
+  '@tabler/icons-react':
+    specifier: ^3.7.0
+    version: 3.7.0(react@18.2.0)
   better-sqlite3:
     specifier: ^9.5.0
     version: 9.5.0
@@ -1426,6 +1429,19 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       defer-to-connect: 2.0.1
+
+  /@tabler/icons-react@3.7.0(react@18.2.0):
+    resolution: {integrity: sha512-8AU4oO9pgLhHLOSGAJIsRhsTy7w8D7uKBlR0DIFxaILFA1fe2rC4wrNGYUtIFei82y41OuXz9vMk0Oe+IWT3SA==}
+    peerDependencies:
+      react: '>= 16'
+    dependencies:
+      '@tabler/icons': 3.7.0
+      react: 18.2.0
+    dev: false
+
+  /@tabler/icons@3.7.0:
+    resolution: {integrity: sha512-lJGIZLSWrPO6VygRUbaVvQjWgL2EaiBMD8e6leCYUQ8ZPO4LIzKMq358C8KlhXJcyNiRz1Io3YWoc/DNTcWqSg==}
+    dev: false
 
   /@tootallnate/once@2.0.0:
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
